@@ -1,0 +1,14 @@
+.buttons {
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: lighter;
+  border-radius: 3rem;
+}
+
+.button-active {
+  background-color: #d22042;
+  color: white;
+}

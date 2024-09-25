@@ -1,0 +1,29 @@
+<div class="bg-white text-black">
+  <div class="w-full flex items-center !bg-white text-nowrap">
+    <div class="mr-4 flex items-center flex-1">
+      <img src="logo_sem_bg.png" alt="Logo do canil" class="max-w-12 md:max-w-16">
+      <p class="text-xl font-medium text-black">Canil Planeta Cão</p>
+    </div>
+    @if(isMobile){
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu de seções do site">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeBtnActive(1)" [class]="btnActive == 1 ? 'button-active': ''">Início</button>
+        <button mat-menu-item (click)="changeBtnActive(2)" [class]="btnActive == 2 ? 'button-active': ''">Sobre</button>
+        <button mat-menu-item (click)="changeBtnActive(3)" [class]="btnActive == 3 ? 'button-active': ''">Serviços</button>
+        <button mat-menu-item (click)="changeBtnActive(4)" [class]="btnActive == 4 ? 'button-active': ''">Contato</button>
+        <button mat-menu-item (click)="changeBtnActive(5)" [class]="btnActive == 5 ? 'button-active': ''">Localização</button>
+      </mat-menu>
+    }
+    @else {
+      <div class="h-full">
+        <button (click)="changeBtnActive(1)" [class]="btnActive == 1 ? 'button-active': ''" class="buttons">Início</button>
+        <button (click)="changeBtnActive(2)" [class]="btnActive == 2 ? 'button-active': ''" class="buttons">Sobre</button>
+        <button (click)="changeBtnActive(3)" [class]="btnActive == 3 ? 'button-active': ''" class="buttons">Serviços</button>
+        <button (click)="changeBtnActive(4)" [class]="btnActive == 4 ? 'button-active': ''" class="buttons">Contato</button>
+        <button (click)="changeBtnActive(5)" [class]="btnActive == 5 ? 'button-active': ''" class="buttons">Localização</button>
+      </div>
+    }
+  </div>
+</div>
