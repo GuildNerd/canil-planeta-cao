@@ -16,8 +16,10 @@ import { MatIconModule } from '@angular/material/icon';
 })
 
 export class HeaderComponent  {
-  btnActive: number = 1;
+  btnActive: number = 0;
   isMobile: boolean = false;
+
+  menus = ["Início", "Sobre", "Serviços", "Contato", "Localização"];
 
   constructor(private breakpointObserver: BreakpointObserver,) {
     // detect screen size changes
@@ -32,7 +34,5 @@ export class HeaderComponent  {
     });
   }
 
-  changeBtnActive(btnNumber: number) {
-    this.btnActive = btnNumber;
-  }
+  changeBtnActive = (btnNumber: number) => this.btnActive = btnNumber;
 }
