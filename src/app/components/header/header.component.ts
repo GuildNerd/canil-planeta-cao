@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+
+type Menu = {
+  nome: string;
+  idComponente: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -15,11 +20,18 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.css'
 })
 
-export class HeaderComponent  {
+export class HeaderComponent {
   btnActive: number = 0;
   isMobile: boolean = false;
 
-  menus = ["Início", "Sobre", "Serviços", "Contato", "Localização"];
+  menus: Menu[] = [
+    { nome: "Início", idComponente: "" },
+    { nome: "Sobre", idComponente: "sobre" },
+    { nome: "Serviços", idComponente: "servicos" },
+    { nome: "Contato", idComponente: "contatos" },
+    { nome: "Localização", idComponente: "localizacao" },
+    //{ nome: "Galeria", idComponente: "galeria" }
+  ];
 
   constructor(private breakpointObserver: BreakpointObserver,) {
     // detect screen size changes
@@ -34,5 +46,7 @@ export class HeaderComponent  {
     });
   }
 
-  changeBtnActive = (btnNumber: number) => this.btnActive = btnNumber;
+  changeBtnActive(btnNumber: number) {
+    this.btnActive = btnNumber;
+  }
 }

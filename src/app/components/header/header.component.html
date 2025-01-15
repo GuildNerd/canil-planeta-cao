@@ -1,25 +1,29 @@
 <div class="bg-white text-black">
   <div class="w-full flex items-center !bg-white text-nowrap">
     <div class="mr-4 flex items-center flex-1">
-      <img src="logo_sem_bg.png" alt="Logo do canil" class="max-w-12 md:max-w-16">
+      <img src="logo_sem_bg.png" alt="Logo do canil" class="max-w-12">
       <p class="text-2xl font-medium text-black">Canil Planeta Cão</p>
     </div>
     @if(isMobile){
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu de seções do site">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        @for (menu of menus; track $index) {
-          <button mat-menu-item (click)="changeBtnActive($index)" [class]="btnActive == $index ? 'button-active': ''">{{menu}}</button>
-        }
-      </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu de seções do site">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      @for (menu of menus; track $index) {
+      <a [href]="'#'+menu.idComponente">
+        <button mat-menu-item (click)="changeBtnActive($index)" [class]="btnActive == $index ? 'button-active': ''">{{menu.nome}}</button>
+      </a>
+      }
+    </mat-menu>
     }
     @else {
-      <div class="h-full">
-        @for (menu of menus; track $index) {
-          <button (click)="changeBtnActive($index)" [class]="btnActive == $index ? 'button-active': ''" class="buttons">{{menu}}</button>
-        }
-      </div>
+    <div class="h-full">
+      @for (menu of menus; track $index) {
+      <a [href]="'#'+menu.idComponente">
+        <button (click)="changeBtnActive($index)" [class]="btnActive == $index ? 'button-active': ''" class="buttons">{{menu.nome}}</button>
+      </a>
+      }
+    </div>
     }
   </div>
 </div>

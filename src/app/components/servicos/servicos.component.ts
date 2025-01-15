@@ -35,8 +35,8 @@ export class ServicosComponent {
     {
       urlImg: "/icones-servicos/escudo.png",
       descricaoImg: "Foto de cão sendo treinado no método K9, para garantir a segurança de residências e comércios",
-      nome: "Treinamento de guarda",
-      texto: "Se a sua necessidade é ter um cão de guarda para proteger sua casa ou comércio, é só nos chamar. Nossos profissionais certificados preparam seu cão para defender seu patrimônio, afastando e atacando qualquer invasor.",
+      nome: "Segurança patrimonial com cão",
+      texto: "Se a sua necessidade é ter um cão de guarda para proteger sua casa ou comércio, é só nos chamar. Nossos profissionais certificados preparam cães para proteger seu patrimônio, afastando qualquer invasor",
       corFundo: "#2160ff"
     },
     {

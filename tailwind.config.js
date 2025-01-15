@@ -12,6 +12,7 @@ export const theme = {
       marrom: {
         'suave': '#3a3132',
         'chumbo': '#3A3435',
+        'destaque': '#231b1c'
       },
       vermelho: {
         'vivo': '#d22042',
