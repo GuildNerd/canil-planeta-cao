@@ -31,6 +31,7 @@ export class HeaderComponent {
     { nome: "Contato", idComponente: "contatos" },
     { nome: "Localização", idComponente: "localizacao" },
     //{ nome: "Galeria", idComponente: "galeria" }
+    { nome: "Parceiros", idComponente: "parceiros" },
   ];
 
   constructor(private breakpointObserver: BreakpointObserver,) {
